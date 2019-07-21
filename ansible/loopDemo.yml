@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruits:
+      - Apple
+      - Orange
+      - Banana
+      - Grapes
+  tasks:
+#"item" is a reserved keyword used for index in loop as we use in other loop statements.
+#"with_items" is will iterate from provided variable
+    - command: echo "{{ item }}"
+      with_items: '{{ fruits }}'
+
+    - debug: msg="{{ item }}"
+      with_items: '{{ fruits }}'
+...

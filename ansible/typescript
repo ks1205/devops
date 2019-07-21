@@ -1,0 +1,1054 @@
+Script started on Sun 21 Jul 2019 04:58:17 AM UTC
+]0;root@ip-172-31-9-115:/opt/devops/ansible[?1034h[root@ip-172-31-9-115 ansible]# vi run-everywhere.sh ./run-everywhere.sh -nsv hostname[1P hostname[1P hostname[K -v hostname[3Pchmod 755 run-everywhere.sh do[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cod[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./run-everywhere.sh -v hostname[K -n hostnames hostnamev hostname[12Pvi run-everywhere.sh [Kansible-playbook playbook1.yml --[Kvvv
+[0;34mansible-playbook 2.8.2[0m
+[0;34m  config file = /etc/ansible/ansible.cfg[0m
+[0;34m  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules'][0m
+[0;34m  ansible python module location = /usr/lib/python2.7/site-packages/ansible[0m
+[0;34m  executable location = /usr/bin/ansible-playbook[0m
+[0;34m  python version = 2.7.5 (default, Jun 11 2019, 12:19:05) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)][0m
+[0;34mUsing /etc/ansible/ansible.cfg as config file[0m
+[0;34mhost_list declined parsing /etc/ansible/hosts as it did not pass it's verify_file() method[0m
+[0;34mscript declined parsing /etc/ansible/hosts as it did not pass it's verify_file() method[0m
+[0;34mauto declined parsing /etc/ansible/hosts as it did not pass it's verify_file() method[0m
+[0;34mParsed /etc/ansible/hosts inventory source with ini plugin[0m
+
+PLAYBOOK: playbook1.yml ************************************************************************
+[0;34m1 plays in playbook1.yml[0m
+
+PLAY [web] *************************************************************************************
+[0;34mMETA: ran handlers[0m
+
+TASK [install httpd] ***************************************************************************
+[1;30mtask path: /opt/devops/ansible/playbook1.yml:6[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 172.31.21.89 '/bin/sh -c '"'"'echo ~ec2-user && sleep 0'"'"''[0m
+[0;34m<172.31.21.89> (0, '/home/ec2-user\n', '')[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 172.31.21.89 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495 `" && echo ansible-tmp-1563685123.94-146296868054495="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495 `" ) && sleep 0'"'"''[0m
+[0;34m<172.31.21.89> (0, 'ansible-tmp-1563685123.94-146296868054495=/home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495\n', '')[0m
+[0;34m<172.31.21.89> Attempting python interpreter discovery[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 172.31.21.89 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''[0m
+[0;34m<172.31.21.89> (0, 'PLATFORM\nLinux\nFOUND\n/usr/libexec/platform-python\nENDFOUND\n', '')[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 172.31.21.89 '/bin/sh -c '"'"'/usr/libexec/platform-python && sleep 0'"'"''[0m
+[0;34m<172.31.21.89> (0, '{"platform_dist_result": ["redhat", "8.0", "Ootpa"], "osrelease_content": "NAME=\\"Red Hat Enterprise Linux\\"\\nVERSION=\\"8.0 (Ootpa)\\"\\nID=\\"rhel\\"\\nID_LIKE=\\"fedora\\"\\nVERSION_ID=\\"8.0\\"\\nPLATFORM_ID=\\"platform:el8\\"\\nPRETTY_NAME=\\"Red Hat Enterprise Linux 8.0 (Ootpa)\\"\\nANSI_COLOR=\\"0;31\\"\\nCPE_NAME=\\"cpe:/o:redhat:enterprise_linux:8.0:GA\\"\\nHOME_URL=\\"https://www.redhat.com/\\"\\nBUG_REPORT_URL=\\"https://bugzilla.redhat.com/\\"\\n\\nREDHAT_BUGZILLA_PRODUCT=\\"Red Hat Enterprise Linux 8\\"\\nREDHAT_BUGZILLA_PRODUCT_VERSION=8.0\\nREDHAT_SUPPORT_PRODUCT=\\"Red Hat Enterprise Linux\\"\\nREDHAT_SUPPORT_PRODUCT_VERSION=\\"8.0\\"\\n"}\n', '')[0m
+[0;34mUsing module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py[0m
+[0;34m<172.31.21.89> PUT /root/.ansible/tmp/ansible-local-1853EYWbyP/tmpTjhWkf TO /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_setup.py[0m
+[0;34m<172.31.21.89> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 '[172.31.21.89]'[0m
+[0;34m<172.31.21.89> (0, 'sftp> put /root/.ansible/tmp/ansible-local-1853EYWbyP/tmpTjhWkf /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_setup.py\n', '')[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 172.31.21.89 '/bin/sh -c '"'"'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/ /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_setup.py && sleep 0'"'"''[0m
+[0;34m<172.31.21.89> (0, '', '')[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 -tt 172.31.21.89 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-wfzeawpalpdvmgyqsywrdrhuobbmavxl ; /usr/libexec/platform-python /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_setup.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''[0m
+[0;34mEscalation succeeded[0m
+[0;34m<172.31.21.89> (0, '\r\n{"ansible_facts": {"ansible_pkg_mgr": "dnf"}, "invocation": {"module_args": {"filter": "ansible_pkg_mgr", "gather_subset": ["!all"], "gather_timeout": 10, "fact_path": "/etc/ansible/facts.d"}}}\r\n', 'Shared connection to 172.31.21.89 closed.\r\n')[0m
+[0;34mUsing module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/dnf.py[0m
+[0;34m<172.31.21.89> PUT /root/.ansible/tmp/ansible-local-1853EYWbyP/tmpUJesM2 TO /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_dnf.py[0m
+[0;34m<172.31.21.89> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 '[172.31.21.89]'[0m
+[0;34m<172.31.21.89> (0, 'sftp> put /root/.ansible/tmp/ansible-local-1853EYWbyP/tmpUJesM2 /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_dnf.py\n', '')[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 172.31.21.89 '/bin/sh -c '"'"'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/ /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_dnf.py && sleep 0'"'"''[0m
+[0;34m<172.31.21.89> (0, '', '')[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 -tt 172.31.21.89 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-epzveuogpdlujltccczoecpgklemhhdh ; /usr/libexec/platform-python /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/AnsiballZ_dnf.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''[0m
+[0;34mEscalation succeeded[0m
+[0;34m<172.31.21.89> (0, '\r\n{"msg": "Nothing to do", "changed": false, "results": ["Installed: httpd"], "rc": 0, "invocation": {"module_args": {"name": ["httpd"], "state": "installed", "allow_downgrade": false, "autoremove": false, "bugfix": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_repoquery": true, "install_weak_deps": true, "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "lock_timeout": 0, "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "releasever": null}}}\r\n', 'Shared connection to 172.31.21.89 closed.\r\n')[0m
+[0;34m<172.31.21.89> ESTABLISH SSH CONNECTION FOR USER: ec2-user[0m
+[0;34m<172.31.21.89> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/opt/devops/AWS-demo-RHEL7.5.pem"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="ec2-user"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/ac822538e1 172.31.21.89 '/bin/sh -c '"'"'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1563685123.94-146296868054495/ > /dev/null 2>&1 && sleep 0'"'"''[0m
+[0;34m<172.31.21.89> (0, '', '')[0m
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m    }, [0m
+[0;32m    "changed": false, [0m
+[0;32m    "invocation": {[0m
+[0;32m        "module_args": {[0m
+[0;32m            "allow_downgrade": false, [0m
+[0;32m            "autoremove": false, [0m
+[0;32m            "bugfix": false, [0m
+[0;32m            "conf_file": null, [0m
+[0;32m            "disable_excludes": null, [0m
+[0;32m            "disable_gpg_check": false, [0m
+[0;32m            "disable_plugin": [], [0m
+[0;32m            "disablerepo": [], [0m
+[0;32m            "download_dir": null, [0m
+[0;32m            "download_only": false, [0m
+[0;32m            "enable_plugin": [], [0m
+[0;32m            "enablerepo": [], [0m
+[0;32m            "exclude": [], [0m
+[0;32m            "install_repoquery": true, [0m
+[0;32m            "install_weak_deps": true, [0m
+[0;32m            "installroot": "/", [0m
+[0;32m            "list": null, [0m
+[0;32m            "lock_timeout": 0, [0m
+[0;32m            "name": [[0m
+[0;32m                "httpd"[0m
+[0;32m            ], [0m
+[0;32m            "releasever": null, [0m
+[0;32m            "security": false, [0m
+[0;32m            "skip_broken": false, [0m
+[0;32m            "state": "installed", [0m
+[0;32m            "update_cache": false, [0m
+[0;32m            "update_only": false, [0m
+[0;32m            "validate_certs": true[0m
+[0;32m        }[0m
+[0;32m    }, [0m
+[0;32m    "msg": "Nothing to do", [0m
+[0;32m    "rc": 0, [0m
+[0;32m    "results": [[0m
+[0;32m        "Installed: httpd"[0m
+[0;32m    ][0m
+[0;32m}[0m
+[0;34mMETA: ran handlers[0m
+[0;34mMETA: ran handlers[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=1   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 9L, 136C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes
+...
+[1m[34m~                                                                                               [11;1H~                                                                                               [12;1H~                                                                                               [13;1H~                                                                                               [14;1H~                                                                                               [15;1H~                                                                                               [16;1H~                                                                                               [17;1H~                                                                                               [18;1H~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+[m  t
+    - n[7;8H[8;8Hecome: ye[?25l[27;1H[1m-- INSERT --[m[27;13H[K[8;17H[?12l[?25hs[?25l[9;26r[9;1H[L[1;27r[9;1H[?12l[?25h[?25l[8C[?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[8;7H[7;7H[6;7H[7;7H[8;7Hbecome: yes[?25l[9;26r[9;1H[L[1;27r[9;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lr[?12l[?25h[?25le[?12l[?25h[?25lg[?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25l_[?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l[10;26r[10;1H[L[1;27r[10;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25l[11;26r[11;1H[L[1;27r[10;5H[K[11;1H-[?12l[?25h[?25l -[?12l[?25h[?25l -[?12l[?25h[?25l -[?12l[?25h[?25l -[?12l[?25h-[?25l [?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lb[?12l[?25h[?25lu[?12l[?25h[?25lg[?12l[?25h[?25lg[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lg[?12l[?25h[?25lndebugging[11;8H[?12l[?25h[?25ladebugging[11;9H[?12l[?25h[?25lmdebugging[11;10H[?12l[?25h[?25ledebugging[11;11H[?12l[?25h[?25l:debugging[11;12H[?12l[?25h[?25l debugging[11;13H[?12l[?25hdebugging[?25l[12;26r[12;1H[L[1;27r[12;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lb[?12l[?25h[?25lu[?12l[?25h[?25lg[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l=[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25l_[?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[27;1H[K[12;25H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 14L, 222C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml -vvv[K[K[K[K[K[13Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 14L, 222C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var
+
+...
+[1m[34m~                                                                                               [16;1H~                                                                                               [17;1H~                                                                                               [18;1H~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+[m    - name:[?25l[27;1H[K[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 14L, 222C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# [H[2J[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml 
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml [14Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 14L, 222C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var
+
+...
+[1m[34m~                                                                                               [16;1H~                                                                                               [17;1H~                                                                                               [18;1H~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+[?25l[m[27;1H[1m-- INSERT --[m[27;13H[K[12;1H[?12l[?25h 
+ [?25l[14;26r[14;1H[L[1;27r[14;1H[?12l[?25h[13;1H
+[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25lc[?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25lc[?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25lc[?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lP[?12l[?25h[?25lr[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lg[?12l[?25h[?25l [?12l[?25h[?25ls[?12l[?25h[?25lu[?12l[?25h[?25lu[?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25lc[?12l[?25h[?25le[?12l[?25h[?25ls[?12l[?25h[?25ls[?12l[?25h[?25lf[?12l[?25h[?25lu[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25lI[?12l[?25h[?25ln[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25la[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25lo[?12l[?25h[?25lj[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25l[15;26r[15;1H[L[1;27r[15;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lb[?12l[?25h[?25lu[?12l[?25h[?25lg[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25lg[?12l[?25h[?25l=[?12l[?25h[?25l'[?12l[?25h[?25lh[?12l[?25h[?25lt[?12l[?25h[?25lt[?12l[?25h[?25lp[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25la[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25l [?12l[?25h[?25ls[?12l[?25h[?25lu[?12l[?25h[?25lc[?12l[?25h[?25lc[?12l[?25h[?25le[?12l[?25h[?25ls[?12l[?25h[?25ls[?12l[?25h[?25lf[?12l[?25h[?25lu[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25ll[?12l[?25h[?25l'[?12l[?25h[?25l[16;26r[16;1H[L[1;27r[16;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25l_[?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25ls[?12l[?25h[?25lu[?12l[?25h[?25lc[?12l[?25h[?25lc[?12l[?25h[?25le[?12l[?25h[?25le[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25ld[?12l[?25heeded[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25l_[?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l.[?12l[?25h[?25lr[?12l[?25h[?25lc[?12l[?25h[?25lp_var.rc[16;18H[?12l[?25h_var.rc[?25l=[?12l[?25h[?25l=[?12l[?25h[?25l0[?12l[?25h[?25l0 [?12l[?25h[?25l 0[?12l[?25h[?25l = 0[?12l[?25h= 0[?25l[17;26r[17;1H[L[1;27r[17;1H[?12l[?25h[?25l[18;26r[18;1H[L[1;27r[18;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lP[?12l[?25h[?25lr[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lg[?12l[?25h[?25l [?12l[?25h[?25lF[?12l[?25h[?25la[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25lu[?12l[?25h[?25lr[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25ls[?12l[?25h[?25ls[?12l[?25h[?25la[?12l[?25h[?25lg[?12l[?25h[?25le[?12l[?25h[?25l[19;26r[19;1H[L[1;27r[19;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lb[?12l[?25h[?25lu[?12l[?25h[?25lg[?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25lg[?12l[?25h[?25l=[?12l[?25h[?25l'[?12l[?25h[?25l'[?12l[?25h[?25lh'[?12l[?25h[?25lt'[?12l[?25h[?25lt'[?12l[?25h[?25lp'[?12l[?25h[?25ld'[?12l[?25h[?25l '[?12l[?25h[?25li'[?12l[?25h[?25ln'[?12l[?25h[?25ls'[?12l[?25h[?25lt'[?12l[?25h[?25la'[?12l[?25h[?25ll'[?12l[?25h[?25ll'[?12l[?25h[?25la'[?12l[?25h[?25lt'[?12l[?25h[?25li'[?12l[?25h[?25lo'[?12l[?25h[?25ln'[?12l[?25h[?25l '[?12l[?25h[?25lf'[?12l[?25h[?25la'[?12l[?25h[?25li'[?12l[?25h[?25ll'[?12l[?25h[?25le'[?12l[?25h[?25ld'[?12l[?25h[?25l!'[?12l[?25h[?25l!'[?12l[?25h''[?25l[20;26r[20;1H[L[1;27r[20;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25l_[?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25la[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l.[?12l[?25h[?25lr[?12l[?25h[?25lc[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25la[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25ld[?12l[?25h[19;32H[18;32H[17;1H[16;29H[?25l= 0[?12l[?25h
+[18;28H[19;28H[20;28Hiled[27;1H[K[20;31H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 21L, 468C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml [14@ansible-playbook[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C^C
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# [H[2J[root@ip-172-31-9-115 ansible]# vi playbook1.yml [14@ansible-playbook[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89][0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=3   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml [Kansible-playbook playbook1.yml -v
+[0;34mUsing /etc/ansible/ansible.cfg as config file[0m
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89] => {"ansible_facts": {"discovered_interpreter_python": "/usr/libexec/platform-python"}, "changed": false, "msg": "Nothing to do", "rc": 0, "results": ["Installed: httpd"]}[0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89] => {}[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=3   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml -v[K[14Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14@ansible-playbook[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 21L, 468C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[14;5H- name: Printing successfull Installation[15;7Hdebug: msg='httpd installation is successfull'[16;7Hwhen:  temp_var.rc == 0[18;5H- name: Printing Failure message[19;7Hdebug: msg='httpd installation failed!!'[20;7Hwhen:  temp_var is failed
+...
+[1m[34m~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h[?25l[m[27;1H[K[27;1H:[?12l[?25hq![?25l[27;1H[K[27;1H[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml -v
+[0;34mUsing /etc/ansible/ansible.cfg as config file[0m
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89] => {"ansible_facts": {"discovered_interpreter_python": "/usr/libexec/platform-python"}, "changed": false, "msg": "Nothing to do", "rc": 0, "results": ["Installed: httpd"]}[0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89] => {}[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=3   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml -v[16Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 21L, 468C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[14;5H- name: Printing successfull Installation[15;7Hdebug: msg='httpd installation is successfull'[16;7Hwhen:  temp_var.rc == 0[18;5H- name: Printing Failure message[19;7Hdebug: msg='httpd installation failed!!'[20;7Hwhen:  temp_var is failed
+...
+[1m[34m~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+[m   
+   
+      debug: var=temp_var[?25l[27;1H[1m-- INSERT --[m[27;13H[K[12;26H[?12l[?25h[?25l[13;26r[13;1H[L[1;27r[13;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[12;7Hdebug: var=temp_var[?25l [?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25lg[?12l[?25h[?25l=[?12l[?25h[?25l"[?12l[?25h[?25l[12;31H[K[12;31H[?12l[?25h[?25l'[?12l[?25h[?25l'[?12l[?25h[?25lh'[?12l[?25h[?25lt'[?12l[?25h[?25lt'[?12l[?25h[?25lp'[?12l[?25h[?25ld'[?12l[?25h[?25l '[?12l[?25h[?25li'[?12l[?25h[?25ls'[?12l[?25h[?25l '[?12l[?25h[?25la'[?12l[?25h[?25ll'[?12l[?25h[?25lr'[?12l[?25h[?25le'[?12l[?25h[?25la'[?12l[?25h[?25ld'[?12l[?25h[?25ly'[?12l[?25h[?25l '[?12l[?25h[?25li'[?12l[?25h[?25ln'[?12l[?25h[?25ls'[?12l[?25h[?25lt'[?12l[?25h[?25la'[?12l[?25h[?25ll'[?12l[?25h[?25ll'[?12l[?25h[?25le'[?12l[?25h[?25ld'[?12l[?25h[?25l!'[?12l[?25h[?25l!'[?12l[?25h[27;1H[K[12;59H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 22L, 510C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml -v
+[0;34mUsing /etc/ansible/ansible.cfg as config file[0m
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89] => {"ansible_facts": {"discovered_interpreter_python": "/usr/libexec/platform-python"}, "changed": false, "msg": "Nothing to do", "rc": 0, "results": ["Installed: httpd"]}[0m
+
+TASK [debugging] *******************************************************************************
+[0;31mfatal: [172.31.21.89]: FAILED! => {"msg": "'msg' and 'var' are incompatible options"}[0m
+
+PLAY RECAP *************************************************************************************
+[0;31m172.31.21.89[0m               : [0;32mok=1   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml -v[16Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 22L, 510C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var msg='httpd is already installed!!'[15;5H- name: Printing successfull Installation[16;7Hdebug: msg='httpd installation is successfull'[17;7Hwhen:  temp_var.rc == 0[19;5H- name: Printing Failure message[20;7Hdebug: msg='httpd installation failed!!'[21;7Hwhen:  temp_var is failed
+...
+[1m[34m~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+[m      debug: var=temp_var msg=[?25l[27;1H[1m-- INSERT --[m[27;13H[K[12;26H[?12l[?25h[?25l[13;26r[13;1H[L[1;27r[12;27H[K[13;2Hmsg='httpd is already installed!!'[?12l[?25h[?25l  msg='httpd is already installed!!' [?12l[?25h[?25l  msg='httpd is already installed!!'  [?12l[?25h[?25l  msg='httpd is already installed!!'   [?12l[?25h[?25l  msg='httpd is already installed!!'    [?12l[?25h[?25l  msg='httpd is already installed!!'     [?12l[?25h[?25l  msg='httpd is already installed!!'[13;7H[?12l[?25h[?25ld msg='httpd is already installed!!'[13;8H[?12l[?25h[?25le msg='httpd is already installed!!'[13;9H[?12l[?25h[?25lv msg='httpd is already installed!!'[13;10H[?12l[?25h[?25l msg='httpd is already installed!!'[13;44H[K[13;9H[?12l[?25h[?25lb msg='httpd is already installed!!'[13;10H[?12l[?25h[?25lu msg='httpd is already installed!!'[13;11H[?12l[?25h[?25lg msg='httpd is already installed!!'[13;12H[?12l[?25h[?25l: msg='httpd is already installed!!'[13;13H[?12l[?25h[27;1H[K[13;12H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 23L, 523C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml -v
+[0;34mUsing /etc/ansible/ansible.cfg as config file[0m
+[1;35m [WARNING]: While constructing a mapping from /opt/devops/ansible/playbook1.yml, line 11,[0m
+[1;35mcolumn 7, found a duplicate dict key (debug). Using last defined value only.[0m
+[1;35m[0m
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89] => {"ansible_facts": {"discovered_interpreter_python": "/usr/libexec/platform-python"}, "changed": false, "msg": "Nothing to do", "rc": 0, "results": ["Installed: httpd"]}[0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd is already installed!!"[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89] => {}[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=3   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml -v[K[K[K
+[1;35m [WARNING]: While constructing a mapping from /opt/devops/ansible/playbook1.yml, line 11,[0m
+[1;35mcolumn 7, found a duplicate dict key (debug). Using last defined value only.[0m
+[1;35m[0m
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd is already installed!!"[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89][0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=3   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml -v[16Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 23L, 523C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[13;7Hdebug: msg='httpd is already installed!!'[16;5H- name: Printing successfull Installation[17;7Hdebug: msg='httpd installation is successfull'[18;7Hwhen:  temp_var.rc == 0[20;5H- name: Printing Failure message[21;7Hdebug: msg='httpd installation failed!!'[22;7Hwhen:  temp_var is failed
+...
+[1m[34m~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+[m      [?25l[27;1H[1m-- INSERT --[m[27;13H[K[13;7H[?12l[?25h[?25l#debug: msg='httpd is already installed!!'[13;8H[?12l[?25hdebug: msg='httpd is already installed!!'[?25l[13;48H[K[13;48H[?12l[?25h[?25l[13;47H[K[13;47H[?12l[?25h[?25l[13;46H[K[13;46H[?12l[?25h[?25l[13;45H[K[13;45H[?12l[?25h[?25l[13;44H[K[13;44H[?12l[?25h[?25l[13;43H[K[13;43H[?12l[?25h[?25l[13;42H[K[13;42H[?12l[?25h[?25l[13;41H[K[13;41H[?12l[?25h[?25l[13;40H[K[13;40H[?12l[?25h[?25l[13;39H[K[13;39H[?12l[?25h[?25l[13;38H[K[13;38H[?12l[?25h[?25l[13;37H[K[13;37H[?12l[?25h[?25l[?12l[?25h[?25l[13;35H[K[13;35H[?12l[?25h[?25l[13;34H[K[13;34H[?12l[?25h[?25l[13;33H[K[13;33H[?12l[?25h[?25l[13;32H[K[13;32H[?12l[?25h[?25l[13;31H[K[13;31H[?12l[?25h[?25l[13;30H[K[13;30H[?12l[?25h[?25l[13;29H[K[13;29H[?12l[?25h[?25l[?12l[?25h[?25l[13;27H[K[13;27H[?12l[?25h[?25l[13;26H[K[13;26H[?12l[?25h[?25l[?12l[?25h[?25l[13;24H[K[13;24H[?12l[?25h[?25l[13;23H[K[13;23H[?12l[?25h[?25l[13;22H[K[13;22H[?12l[?25h[?25l[13;21H[K[13;21H[?12l[?25h[?25l[13;20H[K[13;20H[?12l[?25h[?25l[13;19H[K[13;19H[?12l[?25h[?25l[13;18H[K[13;18H[?12l[?25h[?25l[13;17H[K[13;17H[?12l[?25h[?25l[13;16H[K[13;16H[?12l[?25h[?25l[13;15H[K[13;15H[?12l[?25h[?25l[?12l[?25h[?25l[13;13H[K[13;13H[?12l[?25h[?25l[13;12H[K[13;12H[?12l[?25h[?25l[13;11H[K[13;11H[?12l[?25h[?25l[13;10H[K[13;10H[?12l[?25h[?25l[13;9H[K[13;9H[?12l[?25h[?25l[13;8H[K[13;8H[?12l[?25h[?25l[13;7H[K[13;7H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[12;26r[26;1H
+[1;27r[12;7Hdebug: var=temp_var[26;1H[1m[34m~                                                                                               [12;26H[?12l[?25h[13;8H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[12;26r[m[26;1H
+[1;27r[12;7Hdebug: var=temp_var[26;1H[1m[34m~                                                                                               [12;26H[?12l[?25h[m[27;1H[K[12;25H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 21L, 467C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89][0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=3   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml[13Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 21L, 467C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[14;5H- name: Printing successfull Installation[15;7Hdebug: msg='httpd installation is successfull'[16;7Hwhen:  temp_var.rc == 0[18;5H- name: Printing Failure message[19;7Hdebug: msg='httpd installation failed!!'[20;7Hwhen:  temp_var is failed
+...
+[1m[34m~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[m[27;1H[1m-- INSERT --[m[27;13H[K[21;1H[?12l[?25h[?25l[21;1H[K[22;1H...[22;4H[K[22;1H[?12l[?25h[21;1H[?25l[22;26r[22;1H[L[1;27r[22;1H[?12l[?25h[?25l[8C[?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lP[?12l[?25h[?25lr[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lg[?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25lr[?12l[?25h[?25le[?12l[?25h[?25la[?12l[?25h[?25ld[?12l[?25h[?25ly[?12l[?25h[?25l [?12l[?25h[?25lI[?12l[?25h[?25ln[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25ld[?12l[?25h[?25l[23;26r[23;1H[L[1;27r[23;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lb[?12l[?25h[?25lu[?12l[?25h[?25lg[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25lg[?12l[?25h[?25l=[?12l[?25h[?25l"[?12l[?25h[?25l[23;18H[K[23;18H[?12l[?25h[?25l'[?12l[?25h[?25l'[?12l[?25h[?25l ''[?12l[?25h'[?25l'[23;20H[K[23;18H[?12l[?25h'[?25lH'[?12l[?25h[?25lt'[?12l[?25h[?25lt'[?12l[?25h[?25lp'[?12l[?25h[?25ld'[?12l[?25h[?25l '[?12l[?25h[?25li'[?12l[?25h[?25ls'[?12l[?25h[?25l '[?12l[?25h[?25la'[?12l[?25h[?25ll'[?12l[?25h[?25lr'[?12l[?25h[?25le'[?12l[?25h[?25la'[?12l[?25h[?25ld'[?12l[?25h[?25ly'[?12l[?25h[?25l '[?12l[?25h[?25li'[?12l[?25h[?25ln'[?12l[?25h[?25ls'[?12l[?25h[?25lt'[?12l[?25h[?25la'[?12l[?25h[?25ll'[?12l[?25h[?25ll'[?12l[?25h[?25le'[?12l[?25h[?25ld'[?12l[?25h'[?25l[24;26r[24;1H[L[1;27r[24;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25l_[?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l.[?12l[?25h[?25lc[?12l[?25h[?25lh[?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25lg[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25l=[?12l[?25h[?25l=[?12l[?25h[?25l [?12l[?25h[?25lg[?12l[?25h[?25l[24;32H[K[24;32H[?12l[?25h[?25lf[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l[24;40H[K[24;40H[?12l[?25h[?25l[24;39H[K[24;39H[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25l_[?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l.[?12l[?25h[?25lr[?12l[?25h[?25lc[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l[24;55H[K[24;55H[?12l[?25h[?25l[24;54H[K[24;54H[?12l[?25h[?25l-[?12l[?25h[?25l-[?12l[?25h[?25l[24;55H[K[24;55H[?12l[?25h[?25l[24;54H[K[24;54H[?12l[?25h[?25l=[?12l[?25h[?25l=[?12l[?25h[?25l [?12l[?25h[?25l0[?12l[?25htemp_var.rc == 0[23;46H[24;58H[27;1H[K[24;57H[?25l[?12l[?25h[?25l
+
+
+:[?12l[?25hwq1[?25l"1" [New] 25L, 616C written
+[1m[37m[41mE37: No write since last change[m
+[1m[37m[41mE162: No write since last change for buffer "playbook1.yml"[m
+[32mPress ENTER or type command to continue[?12l[?25h[m[1;1H[3L[?25l[1;1H---
+- hosts: web
+  gather_facts: false[27;1H[K[24;57H[?12l[?25h[?25l
+
+
+:[?12l[?25hq[?25l[27;2H[K[27;2H[?12l[?25hwq![?25l"playbook1.yml" 25L, 616C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89][0m
+
+TASK [Printing when already Installed] *********************************************************
+[0;31mfatal: [172.31.21.89]: FAILED! => {"msg": "The conditional check 'temp_var.change == false and temp_var.rc == 0' failed. The error was: error while evaluating conditional (temp_var.change == false and temp_var.rc == 0): 'dict object' has no attribute 'change'\n\nThe error appears to be in '/opt/devops/ansible/playbook1.yml': line 22, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: Printing when already Installed\n      ^ here\n"}[0m
+
+PLAY RECAP *************************************************************************************
+[0;31m172.31.21.89[0m               : [0;32mok=3   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml[13Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 25L, 616C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[14;5H- name: Printing successfull Installation[15;7Hdebug: msg='httpd installation is successfull'[16;7Hwhen:  temp_var.rc == 0[18;5H- name: Printing Failure message[19;7Hdebug: msg='httpd installation failed!!'[20;7Hwhen:  temp_var is failed[22;5H- name: Printing when already Installed[23;7Hdebug: msg='Httpd is already installed'[24;7Hwhen: temp_var.change == false and temp_var.rc == 0
+...
+[1m[34m~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[m[27;1H[1m-- INSERT --[m[27;13H[K[19;1H[?12l[?25h[18;1H
+
+
+[20;1H[19;1H[18;1H[17;1H[16;1H[15;1H
+
+[16;1H[15;1H[14;1H[13;1H[12;1H
+ 
+    -[15;6H[16;6H
+[18;6H[19;6H[20;6H
+[22;6H name: Printing when alre[23;31Hr[24;31H false and[?25ld == false and temp_var.rc == 0[24;29H[?12l[?25h[27;1H[K[24;28H[?25l[?12l[?25h[?25l
+
+
+:[?12l[?25hwq![?25l"playbook1.yml" 25L, 617C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml[13Pvi playbook1.yml ansible-playbook playbook1.yml
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89][0m
+
+TASK [Printing when already Installed] *********************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "Httpd is already installed"[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=4   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml[13Pvi playbook1.yml ansible-playbook playbook1.yml[13Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 25L, 617C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[14;5H- name: Printing successfull Installation[15;7Hdebug: msg='httpd installation is successfull'[16;7Hwhen:  temp_var.rc == 0[18;5H- name: Printing Failure message[19;7Hdebug: msg='httpd installation failed!!'[20;7Hwhen:  temp_var is failed[22;5H- name: Printing when already Installed[23;7Hdebug: msg='Httpd is already installed'[24;7Hwhen: temp_var.changed == false and temp_var.rc == 0
+...
+[1m[34m~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+[7;1H[6;1H[5;1H[4;1H[3;1H[2;1H[1;1H
+
+
+
+
+
+[6;1H[5;1H[4;1H[3;1H[2;1H[1;1H
+
+
+
+
+
+
+
+
+
+[m    -
+    [11;5H[?25l[27;1H[K[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 25L, 617C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89][0m
+
+TASK [Printing when already Installed] *********************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "Httpd is already installed"[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=4   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml[13Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 25L, 617C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[14;5H- name: Printing successfull Installation[15;7Hdebug: msg='httpd installation is successfull'[16;7Hwhen:  temp_var.rc == 0[18;5H- name: Printing Failure message[19;7Hdebug: msg='httpd installation failed!!'[20;7Hwhen:  temp_var is failed[22;5H- name: Printing when already Installed[23;7Hdebug: msg='Httpd is already installed'[24;7Hwhen: temp_var.changed == false and temp_var.rc == 0
+...
+[1m[34m~                                                                                               [1;1H[?12l[?25h[?25l[m[27;1H[K[27;1H:[?12l[?25hwq![?25l"playbook1.yml" 25L, 617C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi playbook1.yml ansible-playbook playbook1.yml
+
+PLAY [web] *************************************************************************************
+
+TASK [install httpd] ***************************************************************************
+[0;32mok: [172.31.21.89][0m
+
+TASK [debugging] *******************************************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "temp_var": {[0m
+[0;32m        "ansible_facts": {[0m
+[0;32m            "discovered_interpreter_python": "/usr/libexec/platform-python"[0m
+[0;32m        }, [0m
+[0;32m        "changed": false, [0m
+[0;32m        "failed": false, [0m
+[0;32m        "msg": "Nothing to do", [0m
+[0;32m        "rc": 0, [0m
+[0;32m        "results": [[0m
+[0;32m            "Installed: httpd"[0m
+[0;32m        ][0m
+[0;32m    }[0m
+[0;32m}[0m
+
+TASK [Printing successfull Installation] *******************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "httpd installation is successfull"[0m
+[0;32m}[0m
+
+TASK [Printing Failure message] ****************************************************************
+[0;36mskipping: [172.31.21.89][0m
+
+TASK [Printing when already Installed] *********************************************************
+[0;32mok: [172.31.21.89] => {[0m
+[0;32m    "msg": "Httpd is already installed"[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;32m172.31.21.89[0m               : [0;32mok=4   [0m changed=0    unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook playbook1.yml[13Pvi playbook1.yml 
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"playbook1.yml" 25L, 617C[1;1H---
+- hosts: web
+  gather_facts: false
+
+  tasks:
+    - name: install httpd[7;7Hyum:  name=httpd state=installed[8;7Hbecome: yes[9;7Hregister: temp_var[11;5H- name: debugging[12;7Hdebug: var=temp_var[14;5H- name: Printing successfull Installation[15;7Hdebug: msg='httpd installation is successfull'[16;7Hwhen:  temp_var.rc == 0[18;5H- name: Printing Failure message[19;7Hdebug: msg='httpd installation failed!!'[20;7Hwhen:  temp_var is failed[22;5H- name: Printing when already Installed[23;7Hdebug: msg='Httpd is already installed'[24;7Hwhen: temp_var.changed == false and temp_var.rc == 0
+...
+[1m[34m~                                                                                               [1;1H[?12l[?25h[?25l[m[27;1H[K[27;1H:[?12l[?25hq![?25l[27;1H[K[27;1H[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi loopDemo.yml
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"loopDemo.yml" [New File][2;1H[1m[34m~                                                                                               [3;1H~                                                                                               [4;1H~                                                                                               [5;1H~                                                                                               [6;1H~                                                                                               [7;1H~                                                                                               [8;1H~                                                                                               [9;1H~                                                                                               [10;1H~                                                                                               [11;1H~                                                                                               [12;1H~                                                                                               [13;1H~                                                                                               [14;1H~                                                                                               [15;1H~                                                                                               [16;1H~                                                                                               [17;1H~                                                                                               [18;1H~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h[?25l[m[27;1H[1m-- INSERT --[m[27;13H[K[1;1H[?12l[?25h[?25l-[?12l[?25h[?25l-[?12l[?25h[?25l-[?12l[?25h[?25l[2;1H[K[2;1H[?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25lh[?12l[?25h[?25lo[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25ls[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25le[?12l[?25h[?25lb[?12l[?25h[?25l[2;12H[K[2;12H[?12l[?25h[?25l[2;11H[K[2;11H[?12l[?25h[?25l[2;10H[K[2;10H[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25lc[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25lh[?12l[?25h[?25lo[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25l[3;1H[K[3;1H[?12l[?25h[?25l[4;1H[K[4;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25ln[?12l[?25h[?25le[?12l[?25h[?25lc[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25l[4;12H[K[4;12H[?12l[?25h[?25l[4;11H[K[4;11H[?12l[?25h[?25l[4;10H[K[4;10H[?12l[?25h[?25l[4;9H[K[4;9H[?12l[?25h[?25l[4;8H[K[4;8H[?12l[?25h[?25l[4;7H[K[4;7H[?12l[?25h[?25l[4;6H[K[4;6H[?12l[?25h[?25l[4;5H[K[4;5H[?12l[?25h[?25l[4;4H[K[4;4H[?12l[?25h[?25l[4;3H[K[4;3H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[1m[34m~                                                                                               [3;1H[?12l[?25h[?25l[m [?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25ln[?12l[?25h[?25le[?12l[?25h[?25lc[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25la[?12l[?25h[?25l[3;17H[K[3;17H[?12l[?25h[?25lc[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25l[4;1H[K[4;1H[?12l[?25h[?25l[5;1H[K[5;1H[?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25ls[?12l[?25h[?25l[5;6H[K[5;6H[?12l[?25h[?25l[5;5H[K[5;5H[?12l[?25h[?25l[5;4H[K[5;4H[?12l[?25h[?25l[5;3H[K[5;3H[?12l[?25h[?25l[?12l[?25h[?25l[5;1H[K[5;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25ls[?12l[?25hvars[?25l:[?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l[6;1H[K[6;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25lr[?12l[?25h[?25lu[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25ls[?12l[?25h[?25l:[?12l[?25h[?25l[7;1H[K[7;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25lA[?12l[?25h[?25lp[?12l[?25h[?25lp[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l[8;1H[K[8;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25lO[?12l[?25h[?25lr[?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25l[8;13H[K[8;13H[?12l[?25h[?25lg[?12l[?25h[?25le[?12l[?25h[?25l[9;1H[K[9;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25lB[?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25l[10;1H[K[10;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25lG[?12l[?25h[?25lr[?12l[?25h[?25la[?12l[?25h[?25lp[?12l[?25h[?25le[?12l[?25h[?25ls[?12l[?25h[?25l[11;1H[K[11;1H[?12l[?25h[?25l[12;1H[K[12;1H[?12l[?25h[?25l[1m[34m~                                                                                               [11;1H[?12l[?25h[?25l[m[12;1H[K[12;1H[?12l[?25h[?25l[1m[34m~                                                                                               [11;1H[?12l[?25h[?25l[m [?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25la[?12l[?25h[?25ls[?12l[?25h[?25lk[?12l[?25h[?25ls[?12l[?25h[?25l:[?12l[?25h[?25l[12;1H[K[12;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25lc[?12l[?25h[?25l[12;6H[K[12;6H[?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25lo[?12l[?25h[?25lm[?12l[?25h[?25lm[?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25le[?12l[?25h[?25lc[?12l[?25h[?25lj[?12l[?25h[?25l[12;18H[K[12;18H[?12l[?25h[?25lh[?12l[?25h[?25lo[?12l[?25h[?25l [?12l[?25h[?25l"[?12l[?25h[?25l"[?12l[?25h[?25l{"[?12l[?25h[?25l}"[?12l[?25h[?25l{}"[?12l[?25h[?25l}}"[?12l[?25h[?25li}}"[?12l[?25h[?25lt}}"[?12l[?25h[?25le}}"[?12l[?25h[?25lm}}"[?12l[?25h[?25ls}}"[?12l[?25h}[?25l }}"[?12l[?25h[?25l items }}"[12;25H[?12l[?25hitems }}"[?25l[13;1H[K[13;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25lh[?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l_[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25l'[?12l[?25h[?25l{[?12l[?25h[?25l}[?12l[?25h[?25l{}[?12l[?25h[?25l}}[?12l[?25h[?25l }}[?12l[?25h [?25lf}}[?12l[?25h[?25lr}}[?12l[?25h[?25lu}}[?12l[?25h[?25li}}[?12l[?25h[?25lt}}[?12l[?25h[?25le}}[?12l[?25h[?25l}[13;30H[K[13;28H[?12l[?25h[?25ls}}[?12l[?25h[?25l }}[?12l[?25h}}[?25l'[?12l[?25h[?25l[14;1H[K[14;1H[?12l[?25h[?25l[15;1H[K[15;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lb[?12l[?25h[?25lu[?12l[?25h[?25lg[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25lg[?12l[?25h[?25l=[?12l[?25h[?25l [?12l[?25h[?25l{[?12l[?25h[?25l}[?12l[?25h[?25l}}[?12l[?25h[?25l{}[?12l[?25h[?25l}[15;22H[K[15;21H[?12l[?25h[?25l[15;21H[K[15;20H[?12l[?25h[?25l{}[?12l[?25h[?25l}}[?12l[?25h[?25l }}[?12l[?25h[?25li}}[?12l[?25h[?25lt}}[?12l[?25h[?25le}}[?12l[?25h[?25lm}}[?12l[?25h[?25ls}}[?12l[?25h[?25l }}[?12l[?25h}}[?25l"[?12l[?25h[?25l"{{ items }}"[15;20H[?12l[?25h{{ items }}"[?25l[16;1H[K[16;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25li[?12l[?25h[?25lr[?12l[?25h[?25l[16;9H[K[16;9H[?12l[?25h[?25lt[?12l[?25h[?25lh[?12l[?25h[?25l_[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25l'[?12l[?25h[?25l'[?12l[?25h[?25l{'[?12l[?25h[?25l}'[?12l[?25h[?25l{}'[?12l[?25h[?25l}}'[?12l[?25h[?25l }}'[?12l[?25h[?25lf}}'[?12l[?25h[?25lr}}'[?12l[?25h[?25lu}}'[?12l[?25h[?25li}}'[?12l[?25h[?25lt}}'[?12l[?25h[?25ls}}'[?12l[?25h[?25l }}'[?12l[?25h}}'[?25l[17;1H[K[17;1H[?12l[?25h[?25l.[?12l[?25h[?25l.[?12l[?25h[?25l.[?12l[?25h[16;4H[15;4H[14;1H[13;4H[12;4H[11;4H[10;4H[9;4H[8;4H[7;4H[6;4H
+   
+   
+   
+   
+  t
+   
+   
+
+   
+   
+...[16;4H[15;4H - debug: msg= "{{ items }}[27;1H[K[15;30H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"loopDemo.yml" [New] 17L, 269C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi loopDemo.yml
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"loopDemo.yml" 17L, 269C[1;1H---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruits:[7;7H- Apple[8;7H- Orange[9;7H- Banana[10;7H- Grapes
+  tasks:
+    - command: echo "{{ items }}"[13;7Hwith_items: '{{ fruits }}'[15;5H- debug: msg= "{{ items }}"[16;7Hwith_items: '{{ fruits }}'
+...
+[1m[34m~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h[?25l[m[27;1H[K[27;1H:[?12l[?25hwq![?25l"loopDemo.yml" 17L, 269C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# chmod [K[K[K[K[K[Kvi loopDemo.yml
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"loopDemo.yml" 17L, 269C[1;1H---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruits:[7;7H- Apple[8;7H- Orange[9;7H- Banana[10;7H- Grapes
+  tasks:
+    - command: echo "{{ items }}"[13;7Hwith_items: '{{ fruits }}'[15;5H- debug: msg= "{{ items }}"[16;7Hwith_items: '{{ fruits }}'
+...
+[1m[34m~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+[m    - debug: msg= "{{ items [14;1H[13;29H[12;29Hs[?25l[27;1H[K[27;1H:[?12l[?25hwq![?25l"loopDemo.yml" 17L, 269C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# chmod 755 loopDemo.yml 
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ./;[KloopDemo.yml 
+./loopDemo.yml: line 1: ---: command not found
+./loopDemo.yml: line 2: -: command not found
+./loopDemo.yml: line 3: connection:: command not found
+./loopDemo.yml: line 5: vars:: command not found
+./loopDemo.yml: line 6: fruits:: command not found
+./loopDemo.yml: line 7: -: command not found
+./loopDemo.yml: line 8: -: command not found
+./loopDemo.yml: line 9: -: command not found
+./loopDemo.yml: line 10: -: command not found
+./loopDemo.yml: line 11: tasks:: command not found
+./loopDemo.yml: line 12: -: command not found
+./loopDemo.yml: line 13: with_items:: command not found
+./loopDemo.yml: line 15: -: command not found
+./loopDemo.yml: line 16: with_items:: command not found
+./loopDemo.yml: line 17: ...: command not found
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ./loopDemo.yml [K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kansible-playbook loopDemo.yml 
+
+PLAY [localhost] *******************************************************************************
+
+TASK [Gathering Facts] *************************************************************************
+[0;32mok: [localhost][0m
+
+TASK [command] *********************************************************************************
+[0;31mfatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'items' is undefined\n\nThe error appears to be in '/opt/devops/ansible/loopDemo.yml': line 12, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - command: echo \"{{ items }}\"\n      ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}[0m
+
+PLAY RECAP *************************************************************************************
+[0;31mlocalhost[0m                  : [0;32mok=1   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook loopDemo.yml [15P./[C[C[C[C[C[C[C[C[C[C[C[C[C[8@chmod 755 [C[C[C[C[C[C[C[C[C[C[C[C[C[8P./[C[C[C[C[C[C[C[C[C[C[C[C[C[15@ansible-playbook [C[C[C[C[C[C[C[C[C[C[C[C[C[15P./[C[C[C[C[C[C[C[C[C[C[C[C[C[8@chmod 755 [C[C[C[C[C[C[C[C[C[C[C[C[C[8Pvi loopDemo.yml
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"loopDemo.yml" 17L, 269C[1;1H---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruits:[7;7H- Apple[8;7H- Orange[9;7H- Banana[10;7H- Grapes
+  tasks:
+    - command: echo "{{ items }}"[13;7Hwith_items: '{{ fruits }}'[15;5H- debug: msg= "{{ items }}"[16;7Hwith_items: '{{ fruits }}'
+...
+[1m[34m~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+[m    - command: echo "{{ items[?25l[27;1H[1m-- INSERT --[m[27;13H[K[12;30H[?12l[?25h[?25l }}"[12;33H[K[12;29H[?12l[?25h[13;29H
+[15;29H[?25l }}"[15;31H[K[15;27H[?12l[?25h[27;1H[K[15;26H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"loopDemo.yml" 17L, 267C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi loopDemo.ymlansible-playbook loopDemo.yml 
+
+PLAY [localhost] *******************************************************************************
+
+TASK [Gathering Facts] *************************************************************************
+[0;32mok: [localhost][0m
+
+TASK [command] *********************************************************************************
+[0;33mchanged: [localhost] => (item=Apple)[0m
+[0;33mchanged: [localhost] => (item=Orange)[0m
+[0;33mchanged: [localhost] => (item=Banana)[0m
+[0;33mchanged: [localhost] => (item=Grapes)[0m
+
+TASK [debug] ***********************************************************************************
+[0;32mok: [localhost] => (item=Apple) => {[0m
+[0;32m    "msg": ""[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Orange) => {[0m
+[0;32m    "msg": ""[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Banana) => {[0m
+[0;32m    "msg": ""[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Grapes) => {[0m
+[0;32m    "msg": ""[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;33mlocalhost[0m                  : [0;32mok=3   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook loopDemo.yml [15Pvi loopDemo.yml
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"loopDemo.yml" 17L, 267C[1;1H---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruits:[7;7H- Apple[8;7H- Orange[9;7H- Banana[10;7H- Grapes
+  tasks:
+    - command: echo "{{ item }}"[13;7Hwith_items: '{{ fruits }}'[15;5H- debug: msg= "{{ item }}"[16;7Hwith_items: '{{ fruits }}'
+...
+[1m[34m~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+[7;1H[6;1H
+
+
+
+
+[10;1H[m   
+  t
+    -[13;6H 
+[15;7Hdebug: msg= [?25l[27;1H[1m-- INSERT --[m[27;13H[K[15;18H[?12l[?25h[?25l"{{ item }}"[15;30H[K[15;18H[?12l[?25h[27;1H[K[15;17H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"loopDemo.yml" 17L, 266C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi loopDemo.ymlansible-playbook loopDemo.yml 
+
+PLAY [localhost] *******************************************************************************
+
+TASK [Gathering Facts] *************************************************************************
+[0;32mok: [localhost][0m
+
+TASK [command] *********************************************************************************
+[0;33mchanged: [localhost] => (item=Apple)[0m
+[0;33mchanged: [localhost] => (item=Orange)[0m
+[0;33mchanged: [localhost] => (item=Banana)[0m
+[0;33mchanged: [localhost] => (item=Grapes)[0m
+
+TASK [debug] ***********************************************************************************
+[0;32mok: [localhost] => (item=Apple) => {[0m
+[0;32m    "msg": "Apple"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Orange) => {[0m
+[0;32m    "msg": "Orange"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Banana) => {[0m
+[0;32m    "msg": "Banana"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Grapes) => {[0m
+[0;32m    "msg": "Grapes"[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;33mlocalhost[0m                  : [0;32mok=3   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook loopDemo.yml [15Pvi loopDemo.yml
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"loopDemo.yml" 17L, 266C[1;1H---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruits:[7;7H- Apple[8;7H- Orange[9;7H- Banana[10;7H- Grapes
+  tasks:
+    - command: echo "{{ item }}"[13;7Hwith_items: '{{ fruits }}'[15;5H- debug: msg="{{ item }}"[16;7Hwith_items: '{{ fruits }}'
+...
+[1m[34m~                                                                                               [19;1H~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h[?25l[m[27;1H[1m-- INSERT --[m[27;13H[K[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+    - [11;7Hs:[?25l[12;26r[12;1H[L[1;27r[12;1H[?12l[?25h[?25l#[?12l[?25h[?25lI[?12l[?25h[?25l[12;2H[K[12;2H[?12l[?25h[?25l"[?12l[?25h[?25l"[?12l[?25h[?25li"[?12l[?25h[?25lt"[?12l[?25h[?25le"[?12l[?25h[?25lm"[?12l[?25h[?25l "[?12l[?25h[?25l"[12;8H[K[12;7H[?12l[?25h"[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25l [?12l[?25h[?25lr[?12l[?25h[?25le[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25lv[?12l[?25h[?25le[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25l[12;23H[K[12;23H[?12l[?25h[?25lk[?12l[?25h[?25le[?12l[?25h[?25ly[?12l[?25h[?25lw[?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25lo[?12l[?25h[?25lp[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25ly[?12l[?25h[?25lo[?12l[?25h[?25lu[?12l[?25h[?25l[12;49H[K[12;49H[?12l[?25h[?25l[12;48H[K[12;48H[?12l[?25h[?25l[12;47H[K[12;47H[?12l[?25h[?25lu[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25lo[?12l[?25h[?25lt[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25lo[?12l[?25h[?25lp[?12l[?25h[?25l [?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25la[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25ls[?12l[?25h[?25l for loops as we use in other loop statements[12;74H[K[12;29H[?12l[?25h[?25ld for loops as we use in other loop statements[12;30H[?12l[?25h[?25l  for loops as we use in other loop statements[12;31H[?12l[?25h[?25lu for loops as we use in other loop statements[12;32H[?12l[?25h[?25ls for loops as we use in other loop statements[12;33H[?12l[?25h[?25le for loops as we use in other loop statements[12;34H[?12l[?25h[?25ld for loops as we use in other loop statements[12;35H[?12l[?25h[?25l  for loops as we use in other loop statements[12;36H[?12l[?25h[?25lf for loops as we use in other loop statements[12;37H[?12l[?25h[?25lo for loops as we use in other loop statements[12;38H[?12l[?25h[?25lr for loops as we use in other loop statements[12;39H[?12l[?25h[?25l  for loops as we use in other loop statements[12;40H[?12l[?25h[?25lfor loops as we use in other loop statements[12;84H[K[12;39H[?12l[?25h[?25l for loops as we use in other loop statements[12;83H[K[12;38H[?12l[?25h[?25l for loops as we use in other loop statements[12;82H[K[12;37H[?12l[?25h[?25l for loops as we use in other loop statements[12;81H[K[12;36H[?12l[?25h[?25lfor loops as we use in other loop statements[12;80H[K[12;35H[?12l[?25h for loops[?25l as we use in other loop statements[12;79H[K[12;44H[?12l[?25h[?25l as we use in other loop statements[12;78H[K[12;43H[?12l[?25h[?25l as we use in other loop statements[12;77H[K[12;42H[?12l[?25h[?25l as we use in other loop statements[12;76H[K[12;41H[?12l[?25h[?25l as we use in other loop statements[12;75H[K[12;40H[?12l[?25h[?25li as we use in other loop statements[12;41H[?12l[?25h[?25ln as we use in other loop statements[12;42H[?12l[?25h[?25ld as we use in other loop statements[12;43H[?12l[?25h[?25le as we use in other loop statements[12;44H[?12l[?25h[?25lx as we use in other loop statements[12;45H[?12l[?25h[?25l  as we use in other loop statements[12;46H[?12l[?25h[?25li as we use in other loop statements[12;47H[?12l[?25h[?25ln as we use in other loop statements[12;48H[?12l[?25h[?25l  as we use in other loop statements[12;49H[?12l[?25h[?25ll as we use in other loop statements[12;50H[?12l[?25h[?25lo as we use in other loop statements[12;51H[?12l[?25h[?25lp as we use in other loop statements[12;52H[?12l[?25h[?25l as we use in other loop statements[12;86H[K[12;51H[?12l[?25h[?25lo as we use in other loop statements[12;52H[?12l[?25h[?25lp as we use in other loop statements[12;53H[?12l[?25h[27;1H[K[12;52H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"loopDemo.yml" 18L, 354C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi loopDemo.ymlansible-playbook loopDemo.yml 
+
+PLAY [localhost] *******************************************************************************
+
+TASK [Gathering Facts] *************************************************************************
+[0;32mok: [localhost][0m
+
+TASK [command] *********************************************************************************
+[0;33mchanged: [localhost] => (item=Apple)[0m
+[0;33mchanged: [localhost] => (item=Orange)[0m
+[0;33mchanged: [localhost] => (item=Banana)[0m
+[0;33mchanged: [localhost] => (item=Grapes)[0m
+
+TASK [debug] ***********************************************************************************
+[0;32mok: [localhost] => (item=Apple) => {[0m
+[0;32m    "msg": "Apple"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Orange) => {[0m
+[0;32m    "msg": "Orange"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Banana) => {[0m
+[0;32m    "msg": "Banana"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Grapes) => {[0m
+[0;32m    "msg": "Grapes"[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;33mlocalhost[0m                  : [0;32mok=3   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# ansible-playbook loopDemo.yml [15Pvi loopDemo.yml
+[?1049h[?1h=[1;27r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[27;1H"loopDemo.yml" 18L, 354C[1;1H---
+- hosts: localhost
+  connection: local
+
+  vars:
+    fruits:[7;7H- Apple[8;7H- Orange[9;7H- Banana[10;7H- Grapes
+  tasks:
+#"item" is a reserved keyword used for index in loop as we use in other loop statements
+    - command: echo "{{ item }}"[14;7Hwith_items: '{{ fruits }}'[16;5H- debug: msg="{{ item }}"[17;7Hwith_items: '{{ fruits }}'
+...
+[1m[34m~                                                                                               [20;1H~                                                                                               [21;1H~                                                                                               [22;1H~                                                                                               [23;1H~                                                                                               [24;1H~                                                                                               [25;1H~                                                                                               [26;1H~                                                                                               [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+[m#"item" is a reserved keyword used for index in loop as we use in other loop statement[?25l[27;1H[1m-- INSERT --[m[27;13H[K[12;87H[?12l[?25hs[?25l.[?12l[?25h[?25l[13;26r[13;1H[L[1;27r[13;1H[?12l[?25h[?25l#[?12l[?25h[?25lw[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25lh[?12l[?25h[?25l_[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25hs[?25l" is[?12l[?25h[?25l"with_items" is#"[?12l[?25hwith_items" is[?25l [?12l[?25h[?25lw[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25la[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25lr[?12l[?25h[?25lo[?12l[?25h[?25lm[?12l[?25h[?25l [?12l[?25h[?25lp[?12l[?25h[?25lr[?12l[?25h[?25lo[?12l[?25h[?25lv[?12l[?25h[?25li[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25lv[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25li[?12l[?25h[?25la[?12l[?25h[?25lb[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[27;1H[K[13;52H[?25l[?12l[?25h[?25l[27;1H:[?12l[?25hwq![?25l"loopDemo.yml" 19L, 408C written
+[?1l>[?12l[?25h[?1049l]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# vi loopDemo.ymlansible-playbook loopDemo.yml [15Pvi loopDemo.yml[Kvi loopDemo.ymlansible-playbook loopDemo.yml 
+
+PLAY [localhost] *******************************************************************************
+
+TASK [Gathering Facts] *************************************************************************
+[0;32mok: [localhost][0m
+
+TASK [command] *********************************************************************************
+[0;33mchanged: [localhost] => (item=Apple)[0m
+[0;33mchanged: [localhost] => (item=Orange)[0m
+[0;33mchanged: [localhost] => (item=Banana)[0m
+[0;33mchanged: [localhost] => (item=Grapes)[0m
+
+TASK [debug] ***********************************************************************************
+[0;32mok: [localhost] => (item=Apple) => {[0m
+[0;32m    "msg": "Apple"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Orange) => {[0m
+[0;32m    "msg": "Orange"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Banana) => {[0m
+[0;32m    "msg": "Banana"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=Grapes) => {[0m
+[0;32m    "msg": "Grapes"[0m
+[0;32m}[0m
+
+PLAY RECAP *************************************************************************************
+[0;33mlocalhost[0m                  : [0;32mok=3   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@ip-172-31-9-115:/opt/devops/ansible[root@ip-172-31-9-115 ansible]# cd [K[K[Kcd ..
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# ls  -lrt
+total 12
+-r--------. 1 root root 1696 Jul 20 16:20 AWS-demo-RHEL7.5.pem
+drwxr-xr-x. 2 root root  230 Jul 20 17:14 [0m[01;34mshellScripting[0m
+-rw-r--r--. 1 root root 4614 Jul 21 03:53 ansible_help_page
+drwxr-xr-x. 2 root root   74 Jul 21 05:50 [01;34mansible[0m
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]#
