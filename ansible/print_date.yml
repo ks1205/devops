@@ -1,0 +1,13 @@
+---
+ - hosts: web_nodes
+   remote_user: root
+   
+   tasks:
+     - name: print date from remote system
+       command: date
+       register: output
+       
+     - name: debug the output of date command
+       debug:
+          var: output
+...

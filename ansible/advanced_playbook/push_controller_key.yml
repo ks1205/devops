@@ -1,0 +1,12 @@
+---
+- hosts: db_nodes
+  remote_user: ec2-user
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: Authorized key module
+      authorized_key:
+        user: root
+        key: "{{ lookup('file','/root/.ssh/id_rsa.pub') }}"
+...

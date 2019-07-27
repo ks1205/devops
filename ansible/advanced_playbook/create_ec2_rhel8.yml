@@ -1,0 +1,32 @@
+---
+- name: Create and RHEL 8 EC2 Instance
+  hosts: localhost
+  gather_facts: false
+   
+  vars:
+     region: ap-south-1
+     instance_type: t2.micro
+     ami: ami-0a74bfeb190bd404f #RHEL 8 AMI ID
+     keypair: AWS-demo-RHEL7.5
+  tasks:
+     - name: Create an EC2 Instance
+       ec2:
+         key_name: '{{ keypair }}'
+         aws_access_key: '{{ my_access_key }}'
+         aws_secret_key: '{{ my_secret_key }}'
+         group: "launch-wizard-1"
+         instance_type: '{{ instance_type }}'
+         image: '{{ ami }}'
+         wait: true
+         region: '{{ region }}'
+         count: 1
+         count_tag:
+           Name: 'Ansible_RHEL_8'
+         instance_tags:  
+           Name: 'Ansible_RHEL8_m3'
+         vpc_subnet_id: 'subnet-6bc51002'
+         assign_public_ip: yes
+       register: out_ec2
+     - name: debug the creation of EC2 Instance
+       debug: var=out_ec2
+...

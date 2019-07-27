@@ -1051,4 +1051,96 @@ total 12
 drwxr-xr-x. 2 root root  230 Jul 20 17:14 [0m[01;34mshellScripting[0m
 -rw-r--r--. 1 root root 4614 Jul 21 03:53 ansible_help_page
 drwxr-xr-x. 2 root root   74 Jul 21 05:50 [01;34mansible[0m
-]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]#
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# git config --list
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/ks1205/devops.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# git config remote.origin.url=ssh://github.com/ks1205/devops.git
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# git pull
+Already up-to-date.
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    shellScripting/.run-everywhere.sh.swp
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	AWS-demo-RHEL7.5.pem
+#	ansible/
+#	ansible_help_page
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'shellScripting/.run-everywhere.sh.swp' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# '[Kgit add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'shellScripting/.run-everywhere.sh.swp' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   AWS-demo-RHEL7.5.pem
+#	new file:   ansible/1
+#	new file:   ansible/loopDemo.yml
+#	new file:   ansible/playbook1.yml
+#	new file:   ansible/typescript
+#	new file:   ansible_help_page
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    shellScripting/.run-everywhere.sh.swp
+#
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-172-31-9-115 devops]# git commit -m ""A"d"d"e"d" "a"s"[1P"n"s"i"b"l"e" "d"i"r"e"c"t"o"r"y" "i"t"h"[1P"[1P"[1P"w"i"t"h" "s"o"m"e" "e"x"a"m"p"l"e"
+[master 2faeb81] Added ansible directory with some example
+ Committer: root <root@ip-172-31-9-115.ap-south-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 6 files changed, 1239 insertions(+)
+ create mode 100644 AWS-demo-RHEL7.5.pem
+ create mode 100644 ansible/1
+ create mode 100755 ansible/loopDemo.yml
+ create mode 100755 ansible/playbook1.yml
+ create mode 100644 ansible/typescript
+ create mode 100644 ansible_help_page
+]0;root@ip-172-31-9-115:/opt/devops[root@ip-

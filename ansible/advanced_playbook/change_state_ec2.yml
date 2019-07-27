@@ -1,0 +1,26 @@
+---
+- name: Create and RHEL 8 EC2 Instance
+  hosts: localhost
+  gather_facts: false
+   
+  vars:
+     region: ap-south-1
+     instance_type: t2.micro
+     keypair: AWS-demo-RHEL7.5
+  tasks:
+     - name: Create an EC2 Instance
+       ec2:
+         key_name: '{{ keypair }}'
+         aws_access_key: '{{ my_access_key }}'
+         aws_secret_key: '{{ my_secret_key }}'
+         group: "launch-wizard-1"
+         instance_type: '{{ instance_type }}'
+         instance_id: 'i-09a357ebc12c26b14'
+         wait: true
+         region: '{{ region }}'
+         vpc_subnet_id: 'subnet-6bc51002'
+         state: running
+       register: out_ec2
+     - name: debug the creation of EC2 Instance
+       debug: var=out_ec2 
+...
