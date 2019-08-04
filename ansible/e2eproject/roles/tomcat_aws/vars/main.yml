@@ -1,0 +1,6 @@
+---
+# vars file for tomcat_aws
+region: ap-south-1
+keypair: AWS-demo-RHEL7.5
+ami: "ami-5b673c34"
+

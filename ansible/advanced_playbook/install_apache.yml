@@ -1,0 +1,32 @@
+---
+- name: Install and Configure HTTPD Service
+  hosts: db_nodes
+  remote_user: root
+  gather_facts: false
+
+  tasks:
+   - name: Install apache web server
+     yum:
+      name: httpd
+      state: latest
+   #- name: configure httpd.conf file
+   #  copy:
+   #   src: "/opt/devops/files/httpd.original"
+   #   dest: "/etc/httpd/conf/httpd.conf"
+   - name: Copy index.html to destination
+     copy:
+      src: "/opt/devops/files/index.html"
+      dest: "/var/www/html"
+   - name: start and enable httpd service
+     service:
+      name: httpd
+      state: restarted
+      enabled: yes
+     notify:
+      - restart apache
+  handlers:
+   - name: restart apache
+     service:
+       name: httpd
+       state: restarted
+...
